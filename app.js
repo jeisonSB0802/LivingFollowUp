@@ -13,13 +13,41 @@ const redirectClose = document.querySelector("#redirect-close");
 const redirectContinue = document.querySelector("#redirect-continue");
 const redirectLoader = document.querySelector("#redirect-loader");
 const redirectLoading = document.querySelector("#redirect-loading");
+const groupsSection = document.querySelector("#grupos");
+const exploreGroupsLink = document.querySelector(".hero-cta");
 let groups = [];
 let filterMode = "all";
 let redirectTimeout = null;
 let pendingWhatsAppUrl = null;
+const groupCardObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("is-revealing");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 })
+  : null;
 
 const dayOrder = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 const davidHerreraPhone = "50663658363";
+
+exploreGroupsLink.addEventListener("click", () => {
+  groupsSection.classList.remove("is-arriving");
+  window.requestAnimationFrame(() => groupsSection.classList.add("is-arriving"));
+});
+
+function revealGroupCards() {
+  if (!groupCardObserver) {
+    return;
+  }
+  groupCardObserver.disconnect();
+  groupList.querySelectorAll(".group-card").forEach((card) => {
+    card.classList.add("is-revealing");
+    groupCardObserver.observe(card);
+  });
+}
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -51,9 +79,7 @@ function formatTime(value) {
 function getGroupCard(group) {
   const leaders = group.lideres.map(escapeHtml).join(" · ");
   const leadersLabel = group.lideres.length === 1 ? "Líder" : "Líderes";
-  const zoneLabel = group.zona === "Virtual"
-    ? '<span class="zone-label zone-label-virtual">EN LÍNEA</span>'
-    : `<span class="zone-label">${escapeHtml(group.zona)}</span>`;
+  const zoneLabel = `<span class="zone-label">${escapeHtml(group.zona)}</span>`;
   return `
     <article class="group-card">
       <div class="card-topline">
@@ -117,6 +143,7 @@ function renderGroups() {
       <div class="group-grid">${groupsByDay.get(day).map(getGroupCard).join("")}</div>
     </section>
   `).join("");
+  revealGroupCards();
   groupList.setAttribute("aria-busy", "false");
   emptyState.hidden = visibleGroups.length > 0;
   const hasActiveFilters = filterMode !== "all" || groupSearch.value.trim().length > 0;

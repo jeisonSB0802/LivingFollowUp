@@ -1,14 +1,4 @@
 {
-  "contactoGeneral": {
-    "hombre": {
-      "lider": "Marcos Novo",
-      "telefono": "50662332979"
-    },
-    "mujer": {
-      "lider": "Jessica Rojas",
-      "telefono": "50689804970"
-    }
-  },
   "grupos": [
     {
       "id": "lunes-san-juan",
@@ -17,18 +7,8 @@
       "lugar": "San Juan",
       "referencia": "Iglesia Cemilan",
       "hora": "7:00 pm",
-      "lideres": ["Soshil González", "Sofía", "Leo"],
-      "contactos": {
-        "mujer":{
-          "lider": "Soshil González",
-          "telefono": "50685829169"
-        },
-        "hombre":{
-          "lider": "Leo",
-          "telefono": "50687584126"
-        }   
-      }
-    },
+      "lideres": ["Soshil González", "Sofía Valverde", "Leo Vargas"]
+     },
     {
       "id": "lunes-los-parques",
       "dia": "Lunes",
@@ -36,18 +16,8 @@
       "lugar": "San Ramón Centro",
       "referencia": "Los Parques",
       "hora": "7:00 pm",
-      "lideres": ["Melanie Miranda", "Natanael Vega"],
-      "contactos": {
-        "hombre": {
-          "lider": "Natanael Vega",
-          "telefono": "50660229581"
-        },
-        "mujer": {
-          "lider": "Melanie Miranda",
-          "telefono": "50672438700"
-        }
-      }
-    },
+      "lideres": ["Melanie Miranda", "Natanael Vega"]
+     },
     {
       "id": "martes-san-juan",
       "dia": "Martes",
@@ -55,18 +25,8 @@
       "lugar": "San Juan",
       "referencia": "Iglesia Cemilan",
       "hora": "6:30 pm",
-      "lideres": ["Marcos Novo", "Jessica Rojas"],
-      "contactos": {
-        "hombre": {
-          "lider": "Marcos Novo",
-          "telefono": "50662332979"
-        },
-        "mujer": {
-          "lider": "Jessica Rojas",
-          "telefono": "50689804970"
-        }
-      }
-    },
+      "lideres": ["Marcos Novo", "Jessica Rojas"]
+     },
     {
       "id": "miercoles-san-rafael",
       "dia": "Miércoles",
@@ -74,12 +34,8 @@
       "lugar": "San Rafael",
       "referencia": "200 metros sur de Hogares CREA",
       "hora": "7:30 pm",
-      "lideres": ["Gael Valverde"],
-      "contactoUnico": {
-        "lider": "Gael Valverde",
-        "telefono": "50672643593"
-      }
-    },
+      "lideres": ["Gael Valverde"]
+     },
     {
       "id": "miercoles-san-miguel",
       "dia": "Miércoles",
@@ -87,18 +43,8 @@
       "lugar": "San Miguel",
       "referencia": "San Miguel Oeste",
       "hora": "7:30 pm",
-      "lideres": ["Jennifer Alvarado", "Yendry Rojas", "Steven Carvajal"],
-      "contactos": {
-        "hombre": {
-          "lider": "Steven Carvajal",
-          "telefono": "50663897524"
-        },
-        "mujer": {
-          "lider": "Yendry Rojas",
-          "telefono": "50670805428"
-        }
-      }
-    },
+      "lideres": ["Jennifer Alvarado", "Yendry Rojas", "Steven Carvajal"]
+     },
     {
       "id": "miercoles-san-miguel-luis-roberto",
       "dia": "Miércoles",
@@ -106,36 +52,16 @@
       "lugar": "San Miguel",
       "referencia": "",
       "hora": "7:00 pm",
-      "lideres": ["Luis Diego", "Roberto"],
-      "contactos":{
-        "hombre":{
-          "lider":"Roberto Umaña",
-          "telefono": "50672859909"
-        },
-        "mujer":{
-          "lider":"Luis Diego",
-          "telefono":"50664811989"
-        }
-      }
-    },
+      "lideres": ["Luis Diego Ávila", "Roberto Umaña"]
+     },
     {
       "id": "miercoles-virtual",
       "dia": "Miércoles",
       "zona": "Virtual",
       "lugar": "Virtual",
       "hora": "7:00 pm",
-      "lideres": ["Josué Araya", "Bryan Rodríguez", "Sharon Oviedo"],
-      "contactos": {
-        "hombre": {
-          "lider": "Bryan Rodríguez",
-          "telefono": "50686088280"
-        },
-        "mujer": {
-          "lider": "Sharon Oviedo",
-          "telefono": "50687898701"
-        }
-      }
-    },
+      "lideres": ["Josué Araya", "Bryan Rodríguez", "Sharon Oviedo"]
+     },
     {
       "id": "miercoles-naranjo-el-rosario",
       "dia": "Miércoles",
@@ -143,18 +69,8 @@
       "lugar": "El Rosario",
       "referencia": "Ciudadela Pérez",
       "hora": "7:30 pm",
-      "lideres": ["Jeison Sánchez", "Fátima Rojas"],
-      "contactos": {
-        "hombre": {
-          "lider": "Jeison Sánchez",
-          "telefono": "50664717568"
-        },
-        "mujer": {
-          "lider": "Fátima Rojas",
-          "telefono": "50671327606"
-        }
-      }
-    },
+      "lideres": ["Jeison Sánchez", "Fátima Rojas"]
+     },
     {
       "id": "campus-miercoles-cocaleca",
       "dia": "Miércoles",
@@ -162,18 +78,8 @@
       "lugar": "Zaragoza",
       "referencia": "Cocaleca",
       "hora": "7:00 pm",
-      "lideres": ["Brayan Moya", "Yoselin Alvarado"],
-      "contactos": {
-        "hombre": {
-          "lider": "Brayan Moya",
-          "telefono": "50689511113"
-        },
-        "mujer": {
-          "lider": "Yoselin Alvarado",
-          "telefono": "50685376397"
-        }
-      }
-    },
+      "lideres": ["Brayan Moya", "Yoselin Alvarado"]
+     },
     {
       "id": "jueves-las-lomas",
       "dia": "Jueves",
@@ -181,18 +87,8 @@
       "lugar": "Piedades Norte",
       "referencia": "Las Lomas",
       "hora": "6:30 pm",
-      "lideres": ["Génesis Orozco", "Dylan Jiménez"],
-      "contactos": {
-        "hombre": {
-          "lider": "Dylan Jiménez",
-          "telefono": "50663271765"
-        },
-        "mujer": {
-          "lider": "Génesis Orozco",
-          "telefono": "50661056277"
-        }
-      }
-    },
+      "lideres": ["Génesis Orozco", "Dylan Jiménez"]
+     },
     {
       "id": "jueves-centro",
       "dia": "Jueves",
@@ -200,18 +96,8 @@
       "lugar": "San Ramón Centro",
       "referencia": "",
       "hora": "7:00 pm",
-      "lideres": ["Byrone Arroyo", "David Herrera", "Nayeli Quesada"],
-      "contactos": {
-        "hombre": {
-          "lider": "David Herrera",
-          "telefono": "50663658363"
-        },
-        "mujer": {
-          "lider": "Nayeli Quesada",
-          "telefono": "50688006856"
-        }
-      }
-    },
+      "lideres": ["Byrone Arroyo", "David Herrera", "Nayeli Quesada"]
+     },
     {
       "id": "jueves-centro-biblioteca",
       "dia": "Jueves",
@@ -219,18 +105,8 @@
       "lugar": "San Ramón Centro",
       "referencia": "Biblioteca Pública",
       "hora": "7:00 pm",
-      "lideres": ["Esteban Leitón", "Betsy Peña"],
-      "contactos": {
-        "hombre": {
-          "lider": "Esteban Leitón",
-          "telefono": "50686581740"
-        },
-        "mujer": {
-          "lider": "Betsy Peña",
-          "telefono": "19564242358"
-        }
-      }
-    },
+      "lideres": ["Esteban Leitón", "Betsy Peña"]
+     },
     {
       "id": "jueves-pura-vida-misiones",
       "dia": "Jueves",
@@ -238,12 +114,8 @@
       "lugar": "San Juan",
       "referencia": "Pura Vida Misiones",
       "hora": "7:00 pm",
-      "lideres": ["Aarón Jiménez"],
-      "contactoUnico": {
-        "lider": "Aarón Jiménez",
-        "telefono": "50687660356"
-      }
-    },
+      "lideres": ["Aarón Jiménez"]
+     },
     {
       "id": "jueves-san-rafael-samuel",
       "dia": "Jueves",
@@ -251,12 +123,8 @@
       "lugar": "San Rafael",
       "referencia": "",
       "hora": "7:00 pm",
-      "lideres": ["Samuel"],
-      "contactoUnico": {
-        "lider":"Samuel González",
-        "telefono": "50672174826"
-      }
-    },
+      "lideres": ["Samuel Gonzáles"]
+     },
     {
       "id": "jueves-san-juan-carolina",
       "dia": "Jueves",
@@ -264,9 +132,8 @@
       "lugar": "San Juan",
       "referencia": "Frente a la Caballeriza",
       "hora": "7:00 pm",
-      "lideres": ["Carolina"],
-      "contactoUnico": {"lider": "Carolina", "telefono": "50672720579"}
-    },
+      "lideres": ["Carolina Montero"]
+     },
     {
       "id": "jueves-naranjo-centro",
       "dia": "Jueves",
@@ -274,18 +141,8 @@
       "lugar": "Naranjo Centro",
       "referencia": "Bajo los Morados",
       "hora": "7:30 pm",
-      "lideres": ["Fátima Rojas", "Jeison Sánchez"],
-      "contactos": {
-        "hombre": {
-          "lider": "Jeison Sánchez",
-          "telefono": "50664717568"
-        },
-        "mujer": {
-          "lider": "Fátima Rojas",
-          "telefono": "50671327606"
-        }
-      }
-    },
+      "lideres": ["Fátima Rojas", "Jeison Sánchez"]
+     },
     {
       "id": "jueves-palmares-ana-sofia",
       "dia": "Jueves",
@@ -293,48 +150,24 @@
       "lugar": "Palmares",
       "referencia": "",
       "hora": "7:00 pm",
-      "lideres": ["Ana Sofía"],
-      "contactoUnico":{
-        "lider": "Ana Sofía",
-        "telefono": "50661860782"
-      }
-    },
+      "lideres": ["Ana Sofía"]
+     },
     {
       "id": "viernes-virtual",
       "dia": "Viernes",
       "zona": "Virtual",
       "lugar": "Virtual",
       "hora": "10:00 am",
-      "lideres": ["Marcos Novo", "Jessica Rojas"],
-      "contactos": {
-        "hombre": {
-          "lider": "Marcos Novo",
-          "telefono": "50662332979"
-        },
-        "mujer": {
-          "lider": "Jessica Rojas",
-          "telefono": "50689804970"
-        }
-      }
-    },
+      "lideres": ["Marcos Novo", "Jessica Rojas"]
+     },
     {
       "id": "viernes-volio-6",
       "dia": "Viernes",
       "zona": "San Ramón",
       "lugar": "Volio",
       "hora": "6:00 pm",
-      "lideres": ["Valery Jiménez", "Raquel Loría", "Luis José Vargas"],
-      "contactos": {
-        "hombre": {
-          "lider": "Luis José Vargas",
-          "telefono": "50684920810"
-        },
-        "mujer": {
-          "lider": "Valery Jiménez",
-          "telefono": "50683041091"
-        }
-      }
-    },
+      "lideres": ["Valery Jiménez", "Raquel Loría", "Luis José Vargas"]
+     },
     {
       "id": "viernes-volio-7",
       "dia": "Viernes",
@@ -342,65 +175,31 @@
       "lugar": "Volio",
       "referencia": "150 metros sur de la escuela de Volio",
       "hora": "7:00 pm",
-      "lideres": ["Kevin Méndez"],
-      "contactoUnico": {
-        "lider": "Kevin Méndez",
-        "telefono": "50687888341"
-      }
-    },
+      "lideres": ["Kevin Méndez"]
+     },
     {
       "id": "viernes-san-rafael",
       "dia": "Viernes",
       "zona": "San Ramón",
       "lugar": "San Rafael",
       "hora": "7:00 pm",
-      "lideres": ["Josué Araya", "Bryan Rodríguez", "Sharon Oviedo"],
-      "contactos": {
-        "hombre": {
-          "lider": "Bryan Rodríguez",
-          "telefono": "50686088280"
-        },
-        "mujer": {
-          "lider": "Sharon Oviedo",
-          "telefono": "50687898701"
-        }
-      }
-    },
+      "lideres": ["Josué Araya", "Bryan Rodríguez", "Sharon Oviedo"]
+     },
     {
       "id": "viernes-san-pedro",
       "dia": "Viernes",
       "zona": "San Ramón",
       "lugar": "San Pedro",
       "hora": "7:30 pm",
-      "lideres": ["Dylan Zamora", "Bianca Amores"],
-      "contactos": {
-        "hombre": {
-          "lider": "Dylan Zamora",
-          "telefono": "50687053942"
-        },
-        "mujer": {
-          "lider": "Bianca Amores",
-          "telefono": "50685220435"
-        }
-      }
-    },
+      "lideres": ["Dylan Zamora", "Bianca Amores"]
+     },
     {
       "id": "campus-viernes-buenos-aires",
       "dia": "Viernes",
       "zona": "Palmares",
       "lugar": "Buenos Aires",
       "hora": "7:00 pm",
-      "lideres": ["Brayan Moya", "Yoselin Alvarado"],
-      "contactos": {
-        "hombre": {
-          "lider": "Brayan Moya",
-          "telefono": "50689511113"
-        },
-        "mujer": {
-          "lider": "Yoselin Alvarado",
-          "telefono": "50685376397"
-        }
-      }
-    }
+      "lideres": ["Brayan Moya", "Yoselin Alvarado"]
+     }
   ]
 }

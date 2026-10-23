@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -59,15 +63,12 @@ a {
   padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
   color: var(--white);
   background: #000;
+  border-bottom: 2px solid rgb(229 5 86 / 65%);
 }
 
 .hero::before {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 42%, rgb(229 5 86 / 17%), transparent 48%),
-    radial-gradient(ellipse at 8% 90%, rgb(178 4 67 / 12%), transparent 34%),
-    radial-gradient(ellipse at 100% 8%, rgb(229 5 86 / 9%), transparent 32%);
   content: "";
   pointer-events: none;
 }
@@ -94,6 +95,36 @@ a {
   width: min(100%, 840px);
   margin: 0 auto;
   text-align: center;
+}
+
+.hero-nav {
+  position: absolute;
+  z-index: 2;
+  top: 1.25rem;
+  right: max(1.25rem, calc((100% - 1120px) / 2));
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-nav a {
+  padding: 0.4rem 0;
+  color: #e7e3e4;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 5px;
+  transition: color 140ms ease;
+}
+
+.hero-nav a:hover {
+  color: #ff78a5;
+  text-decoration: underline;
+}
+
+.hero-nav a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid #ff78a5;
+  outline-offset: 4px;
 }
 
 .hero-logo {
@@ -160,11 +191,12 @@ p {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+  transition: transform 140ms ease, background-color 140ms ease, box-shadow 140ms ease, filter 140ms ease;
 }
 
 .button:hover {
   transform: translateY(-2px);
+  filter: brightness(1.04);
 }
 
 .button:focus-visible,
@@ -194,6 +226,27 @@ select:focus-visible {
 .hero-cta {
   min-height: 56px;
   padding-inline: 1.6rem;
+  animation: hero-cta-pulse 2.6s ease-in-out infinite;
+}
+
+.hero-cta span {
+  display: inline-block;
+  animation: hero-cta-arrow 1.3s ease-in-out infinite;
+}
+
+.hero-cta:hover,
+.hero-cta:focus-visible {
+  animation-play-state: paused;
+}
+
+.hero-cta:active {
+  transform: translateY(1px) scale(0.97);
+  filter: brightness(0.92);
+}
+
+.hero-cta:hover span,
+.hero-cta:focus-visible span {
+  animation-play-state: paused;
 }
 
 .section-wrap {
@@ -202,14 +255,19 @@ select:focus-visible {
 }
 
 .groups-section {
-  padding-top: clamp(4rem, 8vw, 7rem);
-  padding-bottom: clamp(4.5rem, 9vw, 7.5rem);
+  padding-top: clamp(4.5rem, 9vw, 7.5rem);
+  padding-bottom: clamp(5rem, 10vw, 8rem);
 }
 
 .section-heading {
   max-width: 740px;
   margin: 0 auto 2.2rem;
   text-align: center;
+  animation: section-heading-in 650ms ease-out both;
+}
+
+.groups-section.is-arriving .section-heading {
+  animation: groups-arrival 700ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
 .eyebrow-pink {
@@ -383,6 +441,18 @@ select:focus-visible {
   font-weight: 700;
 }
 
+#group-list[aria-busy="true"]::before {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 1.5rem auto;
+  border: 3px solid var(--line);
+  border-top-color: var(--pink);
+  border-radius: 50%;
+  animation: redirect-spin 800ms linear infinite;
+  content: "";
+}
+
 .contact-hint {
   max-width: 780px;
   margin: 0 0 1.25rem;
@@ -421,6 +491,24 @@ select:focus-visible {
   border-radius: 20px;
   background: var(--white);
   box-shadow: 0 3px 0 var(--black);
+  transition: opacity 400ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.group-card.is-revealing {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.group-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgb(11 11 11 / 12%), 0 3px 0 var(--black);
+}
+
+@media (hover: hover) {
+  .group-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgb(11 11 11 / 12%), 0 3px 0 var(--black);
+  }
 }
 
 .card-topline {
@@ -442,11 +530,6 @@ select:focus-visible {
   font-weight: 700;
   text-align: right;
   background: var(--cream);
-}
-
-.zone-label-virtual {
-  color: var(--pink-dark);
-  background: #ffe5ee;
 }
 
 .day-group {
@@ -523,6 +606,11 @@ select:focus-visible {
   font-size: 0.9rem;
 }
 
+.join-button:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.94);
+}
+
 .empty-state,
 .load-error {
   margin: 1rem 0 0;
@@ -557,9 +645,7 @@ select:focus-visible {
   overflow: hidden;
   padding: clamp(3.25rem, 7vw, 5.5rem) 1.25rem 1.5rem;
   color: var(--white);
-  background:
-    radial-gradient(ellipse at 88% 0%, rgb(229 5 86 / 22%), transparent 35%),
-    var(--black);
+  background: var(--black);
 }
 
 .footer-inner {
@@ -772,6 +858,26 @@ select:focus-visible {
   to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
+@keyframes section-heading-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes groups-arrival {
+  from { transform: translateY(14px) scale(0.985); opacity: 0.65; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes hero-cta-pulse {
+  0%, 100% { box-shadow: 0 3px 0 var(--pink-dark); }
+  50% { box-shadow: 0 4px 16px rgb(242 55 117 / 45%); }
+}
+
+@keyframes hero-cta-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .redirect-dialog[open],
   .redirect-loader {
@@ -794,6 +900,12 @@ select:focus-visible {
   .hero {
     min-height: 0;
     padding: 3rem 1.25rem 3.5rem;
+  }
+
+  .hero-nav {
+    right: 0;
+    left: 0;
+    justify-content: center;
   }
 
   .hero-logo {
