@@ -17,6 +17,7 @@
       "zona": "San Ramón",
       "lugar": "San Juan",
       "referencia": "Iglesia Cemilan",
+      "mapa": "https://www.google.com/maps/place/Cemilan/@10.1007536,-84.4729341,751m/data=!3m1!1e3!4m6!3m5!1s0x8fa044f2a495055b:0x4de97e31ac3b126!8m2!3d10.1007483!4d-84.4703592!16s%2Fg%2F1hf3lwdfj?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:00 pm",
       "lideres": ["Soshil González", "Sofía Valverde", "Leo Vargas"],
       "contactos": {
@@ -55,6 +56,7 @@
       "zona": "San Ramón",
       "lugar": "San Juan",
       "referencia": "Iglesia Cemilan",
+      "mapa": "https://www.google.com/maps/place/Cemilan/@10.1007536,-84.4729341,751m/data=!3m1!1e3!4m6!3m5!1s0x8fa044f2a495055b:0x4de97e31ac3b126!8m2!3d10.1007483!4d-84.4703592!16s%2Fg%2F1hf3lwdfj?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D",
       "hora": "6:30 pm",
       "lideres": ["Marcos Novo", "Jessica Rojas"],
       "contactos": {
@@ -138,6 +140,7 @@
       "zona": "Naranjo",
       "lugar": "El Rosario",
       "referencia": "Ciudadela Pérez",
+      "mapa": "https://www.google.com/maps/place/10%C2%B002'58.5%22N+84%C2%B022'18.2%22W/@10.0495872,-84.374305,1117m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.0495872!4d-84.3717301?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:30 pm",
       "lideres": ["Jeison Sánchez", "Fátima Rojas"],
       "contactos": {
@@ -157,6 +160,7 @@
       "zona": "Palmares",
       "lugar": "Zaragoza",
       "referencia": "Detrás de la plaza de deportes de la Cocaleca",
+      "mapa": "https://www.google.com/maps/place/Internetideas/@10.0429516,-84.4196548,1117m/data=!3m1!1e3!4m6!3m5!1s0xad9e832a0e19b9f:0xab1ba4d11ac386fc!8m2!3d10.042954!4d-84.4196561!16s%2Fg%2F11shly61m8?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:00 pm",
       "lideres": ["Brayan Moya", "Yoselin Alvarado"],
       "contactos": {
@@ -233,6 +237,7 @@
       "zona": "San Ramón",
       "lugar": "San Rafael",
       "referencia": "100 metros al norte de la iglesia de San Rafael, casa a mano derecha color celeste",
+      "mapa": "https://www.google.com/maps/place/10%C2%B003'54.9%22N+84%C2%B028'22.2%22W/@10.065249,-84.472819,1117m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.065249!4d-84.472819?entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:00 pm",
       "lideres": ["Samuel González"],
       "contactoUnico": {
@@ -246,6 +251,7 @@
       "zona": "San Ramón",
       "lugar": "San Juan",
       "referencia": "Iglesia Cemilan",
+      "mapa": "https://www.google.com/maps/place/Cemilan/@10.1007536,-84.4729341,751m/data=!3m1!1e3!4m6!3m5!1s0x8fa044f2a495055b:0x4de97e31ac3b126!8m2!3d10.1007483!4d-84.4703592!16s%2Fg%2F1hf3lwdfj?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:00 pm",
       "lideres": ["Marcos Novo", "Jessica Rojas"],
       "contactos": {
@@ -265,6 +271,7 @@
       "zona": "Naranjo",
       "lugar": "Naranjo Centro",
       "referencia": "Bajo los morados",
+      "mapa": "https://www.google.com/maps/place/10%C2%B006'29.0%22N+84%C2%B023'24.4%22W/@10.1080632,-84.392688,1117m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.1080632!4d-84.3901131?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:30 pm",
       "lideres": ["Fátima Rojas", "Jeison Sánchez"],
       "contactos": {
@@ -277,6 +284,16 @@
           "telefono": "50671327606"
         }
       }
+    },
+    {
+      "id": "jueves-palmares-centro",
+      "dia": "Jueves",
+      "zona": "Palmares",
+      "lugar": "Palmares Centro",
+      "referencia": "Del parque de Palmares 200 metros sur y 25 metros oeste en Barrio Santa fe este",
+      "mapa": "https://www.google.com/maps/place/10%C2%B003'11.4%22N+84%C2%B025'49.5%22W/@10.0531699,-84.4329769,1117m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.0531699!4d-84.430402?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+      "hora": "7:00 pm",
+      "lideres": ["Ana Sofía Cueva"]
     },
     {
       "id": "viernes-volio-6",
@@ -348,6 +365,7 @@
       "zona": "Palmares",
       "lugar": "Buenos Aires",
       "referencia": "Tres Marías, de la escuela SEP 200 metros norte y 25 metros oeste en calle real",
+      "mapa": "https://www.google.com/maps/place/10%C2%B003'49.3%22N+84%C2%B026'20.2%22W/@10.0636947,-84.4415102,1117m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.0636947!4d-84.4389353?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:00 pm",
       "lideres": ["Brayan Moya", "Yoselin Alvarado"],
       "contactos": {

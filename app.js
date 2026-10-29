@@ -90,7 +90,7 @@ function getGroupCard(group) {
       <dl class="group-details">
         <div><dt>${leadersLabel}</dt><dd>${leaders}</dd></div>
         <div><dt>Hora</dt><dd>${escapeHtml(formatTime(group.hora))}</dd></div>
-        ${group.referencia ? `<div><dt>Referencia</dt><dd>${escapeHtml(group.referencia)}</dd></div>` : ""}
+        ${group.referencia || group.mapa ? `<div><dt>Referencia</dt><dd>${group.referencia ? `${escapeHtml(group.referencia)}${group.mapa ? "<br>" : ""}` : ""}${group.mapa ? `<a href="${escapeHtml(group.mapa)}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>` : ""}</dd></div>` : ""}
       </dl>
       <button class="button button-pink join-button" type="button" data-group-id="${escapeHtml(group.id)}">Me interesa unirme <span aria-hidden="true">↗</span></button>
     </article>
@@ -258,6 +258,20 @@ function validateGroupData(data) {
     }
     if (group.referencia !== undefined && typeof group.referencia !== "string") {
       throw new Error(`${label} tiene una referencia con formato no válido`);
+    }
+    if (group.mapa !== undefined) {
+      if (typeof group.mapa !== "string") {
+        throw new Error(`${label} tiene un enlace de mapa con formato no válido`);
+      }
+      let mapUrl;
+      try {
+        mapUrl = new URL(group.mapa);
+      } catch {
+        throw new Error(`${label} tiene un enlace de mapa no válido`);
+      }
+      if (mapUrl.protocol !== "https:" || mapUrl.hostname !== "www.google.com") {
+        throw new Error(`${label} tiene un enlace de mapa no permitido`);
+      }
     }
     if (ids.has(group.id)) {
       throw new Error(`El identificador "${group.id}" está duplicado`);
