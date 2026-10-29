@@ -114,6 +114,7 @@ function filterGroups(sourceGroups, query) {
   return sourceGroups.filter((group) => normalizeSearch([
     group.zona,
     group.lugar,
+    group.referencia,
     group.dia,
     ...group.lideres,
   ].join(" ")).includes(query));
@@ -212,10 +213,72 @@ function resetFilters() {
 
 function showLoadError(error) {
   console.error("No se pudieron cargar los grupos:", error);
-  groupList.innerHTML = '<p class="load-error">No pudimos cargar los grupos. Recarga la página para intentarlo de nuevo.</p>';
-    groupList.setAttribute("aria-busy", "false");
-    resultsSummary.textContent = "No se pudieron cargar los grupos.";
+  groupList.innerHTML = `
+    <div class="load-error" role="alert">
+      <p>No pudimos cargar los grupos. Inténtalo de nuevo.</p>
+      <button class="button button-dark" id="retry-groups" type="button">Intentar de nuevo</button>
+    </div>
+  `;
+  groupList.setAttribute("aria-busy", "false");
+  resultsSummary.textContent = "No se pudieron cargar los grupos.";
+  groupList.querySelector("#retry-groups").addEventListener("click", loadGroups);
+}
+
+function validateGroupData(data) {
+  if (!data || typeof data !== "object" || !Array.isArray(data.grupos) || data.grupos.length === 0) {
+    throw new Error("groups.json no contiene una lista válida de grupos");
   }
+
+  const ids = new Set();
+  data.grupos.forEach((group, index) => {
+    const label = `El grupo ${index + 1}`;
+    if (!group || typeof group !== "object" || Array.isArray(group)) {
+      throw new Error(`${label} no contiene un objeto válido`);
+    }
+
+    ["id", "dia", "zona", "lugar", "hora"].forEach((field) => {
+      if (typeof group[field] !== "string" || !group[field].trim()) {
+        throw new Error(`${label} no tiene un valor válido para "${field}"`);
+      }
+    });
+
+    if (!dayOrder.includes(group.dia)) {
+      throw new Error(`${label} tiene un día no reconocido: "${group.dia}"`);
+    }
+    if (!Array.isArray(group.lideres) || group.lideres.length === 0
+      || group.lideres.some((leader) => typeof leader !== "string" || !leader.trim())) {
+      throw new Error(`${label} no contiene una lista válida de líderes`);
+    }
+    if (group.referencia !== undefined && typeof group.referencia !== "string") {
+      throw new Error(`${label} tiene una referencia con formato no válido`);
+    }
+    if (ids.has(group.id)) {
+      throw new Error(`El identificador "${group.id}" está duplicado`);
+    }
+    ids.add(group.id);
+  });
+
+  return data.grupos;
+}
+
+function loadGroups() {
+  groupList.setAttribute("aria-busy", "true");
+  groupList.replaceChildren();
+  resultsSummary.textContent = "Cargando grupos…";
+
+  fetch("groups.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`groups.json respondió con estado ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      groups = validateGroupData(data);
+      renderGroups();
+    })
+    .catch(showLoadError);
+}
 
 function openDavidHerreraWhatsApp(group = null) {
   const groupLocation = group
@@ -325,18 +388,4 @@ resetFiltersButton.addEventListener("click", resetFilters);
 emptyResetButton.addEventListener("click", resetFilters);
 generalContact.addEventListener("click", () => openDavidHerreraWhatsApp());
 
-fetch("groups.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`groups.json respondió con estado ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((data) => {
-    if (!Array.isArray(data.grupos)) {
-      throw new Error("groups.json no contiene una lista válida de grupos");
-    }
-    groups = data.grupos;
-    renderGroups();
-  })
-  .catch(showLoadError);
+loadGroups();

@@ -57,36 +57,13 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 540px;
+  min-height: 100vh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
   padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
   color: var(--white);
   background: #000;
-  border-bottom: 2px solid rgb(229 5 86 / 65%);
-}
-
-.hero::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  pointer-events: none;
-}
-
-.hero::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(58vw, 680px);
-  aspect-ratio: 1;
-  border: 1px solid rgb(255 255 255 / 3%);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 64px rgb(255 255 255 / 0.8%),
-    0 0 0 128px rgb(255 255 255 / 0.5%);
-  content: "";
-  pointer-events: none;
-  transform: translate(-50%, -50%);
 }
 
 .hero-inner {
@@ -256,7 +233,7 @@ select:focus-visible {
 
 .groups-section {
   padding-top: clamp(4.5rem, 9vw, 7.5rem);
-  padding-bottom: clamp(5rem, 10vw, 8rem);
+  padding-bottom: 2rem;
 }
 
 .section-heading {
@@ -500,14 +477,14 @@ select:focus-visible {
 }
 
 .group-card:focus-within {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgb(11 11 11 / 12%), 0 3px 0 var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgb(11 11 11 / 8%), 0 3px 0 var(--black);
 }
 
 @media (hover: hover) {
   .group-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgb(11 11 11 / 12%), 0 3px 0 var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgb(11 11 11 / 8%), 0 3px 0 var(--black);
   }
 }
 
@@ -587,6 +564,7 @@ select:focus-visible {
   gap: 0.35rem;
   font-size: 0.93rem;
   line-height: 1.5;
+  text-align: left;
 }
 
 .group-details dt {
@@ -621,6 +599,17 @@ select:focus-visible {
   text-align: center;
 }
 
+.load-error {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+}
+
+.load-error p {
+  margin: 0;
+  font-weight: 700;
+}
+
 .empty-state {
   display: grid;
   justify-items: center;
@@ -645,7 +634,7 @@ select:focus-visible {
   overflow: hidden;
   padding: clamp(3.25rem, 7vw, 5.5rem) 1.25rem 1.5rem;
   color: var(--white);
-  background: var(--black);
+  background: #000;
 }
 
 .footer-inner {
@@ -692,20 +681,82 @@ select:focus-visible {
   background: #f4edef;
 }
 
-.footer-signoff {
+.footer-socials {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.35rem 1.2rem;
+  gap: 0.65rem;
+  margin-top: 1.8rem;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  min-width: 48px;
+  min-height: 48px;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.footer-socials svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.footer-socials a[href*="instagram"] svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.footer-socials .social-icon-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.footer-socials a:hover {
+  border-color: rgb(255 255 255 / 55%);
+  background: rgb(255 255 255 / 10%);
+}
+
+.footer-socials a:focus-visible {
+  border-radius: 999px;
+  outline: 2px solid #ff78a5;
+  outline-offset: 3px;
+}
+
+.footer-signoff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
   margin: clamp(2.5rem, 6vw, 4rem) auto 0;
   padding-top: 1.25rem;
   border-top: 1px solid rgb(255 255 255 / 15%);
 }
 
 .footer-motto,
-.footer-verse {
+.footer-verse,
+.footer-scripture-text {
   margin: 0;
+}
+
+.footer-scripture {
+  display: grid;
+  justify-items: center;
+  gap: 0.55rem;
+  width: min(100%, 620px);
+  text-align: center;
 }
 
 .footer-motto {
@@ -725,6 +776,21 @@ select:focus-visible {
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.19em;
+}
+
+.footer-scripture-text {
+  color: #aaa4a6;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.footer-logo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 1.5rem auto 0;
+  object-fit: contain;
+  opacity: 0.88;
 }
 
 .redirect-dialog {
@@ -878,14 +944,6 @@ select:focus-visible {
   50% { transform: translateY(4px); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .redirect-dialog[open],
-  .redirect-loader {
-    animation-duration: 1ms;
-    animation-iteration-count: 1;
-  }
-}
-
 @media (max-width: 900px) {
   .group-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -898,7 +956,6 @@ select:focus-visible {
   }
 
   .hero {
-    min-height: 0;
     padding: 3rem 1.25rem 3.5rem;
   }
 
@@ -933,8 +990,9 @@ select:focus-visible {
     position: sticky;
     z-index: 5;
     top: 0;
+    gap: 0.45rem;
     margin: 0 -0.5rem 0.75rem;
-    padding: 0.6rem 0.5rem;
+    padding: 0.4rem 0.5rem;
     border-bottom: 1px solid var(--line);
     background: rgb(246 243 241 / 96%);
     backdrop-filter: blur(12px);
@@ -970,11 +1028,6 @@ select:focus-visible {
     font-size: 0.85rem;
   }
 
-  .footer-signoff {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
   .footer-motto {
     text-align: center;
   }
@@ -987,24 +1040,41 @@ select:focus-visible {
   }
 
   .search-field {
-    flex: 0 0 48px;
+    min-height: 42px;
+    flex: 0 0 42px;
+    padding-inline: 0.8rem;
+  }
+
+  .search-field input {
+    min-height: 40px;
+    font-size: 0.85rem;
   }
 
   .filter-tabs {
+    min-height: 40px;
     justify-content: stretch;
   }
 
   .filter-tab {
     flex: 1;
-    padding-inline: 0.7rem;
+    min-height: 34px;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.82rem;
   }
 
   .filter-select-wrap {
+    min-height: 40px;
     justify-content: space-between;
+  }
+
+  .filter-select-wrap select {
+    min-height: 36px;
   }
 
   .reset-filters {
     align-self: center;
+    min-height: 36px;
+    padding-block: 0.35rem;
   }
 }
 

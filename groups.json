@@ -18,7 +18,7 @@
       "lugar": "San Juan",
       "referencia": "Iglesia Cemilan",
       "hora": "7:00 pm",
-      "lideres": ["Soshil González", "Sofía", "Leo"],
+      "lideres": ["Soshil González", "Sofía Valverde", "Leo Vargas"],
       "contactos": {
         "mujer": {
           "lider": "Soshil González",
@@ -124,7 +124,7 @@
       "dia": "Miércoles",
       "zona": "San Ramón",
       "lugar": "San Rafael",
-      "referencia": "",
+      "referencia": "1 kilómetro al norte de la iglesia de San Rafael",
       "hora": "7:30 pm",
       "lideres": ["Gael Valverde"],
       "contactoUnico": {
@@ -136,8 +136,8 @@
       "id": "miercoles-naranjo-el-rosario",
       "dia": "Miércoles",
       "zona": "Naranjo",
-      "lugar": "Naranjo Rosario",
-      "referencia": "",
+      "lugar": "El Rosario",
+      "referencia": "Ciudadela Pérez",
       "hora": "7:30 pm",
       "lideres": ["Jeison Sánchez", "Fátima Rojas"],
       "contactos": {
@@ -155,8 +155,8 @@
       "id": "campus-miercoles-cocaleca",
       "dia": "Miércoles",
       "zona": "Palmares",
-      "lugar": "Cocaleca",
-      "referencia": "",
+      "lugar": "Zaragoza",
+      "referencia": "Detrás de la plaza de deportes de la Cocaleca",
       "hora": "7:00 pm",
       "lideres": ["Brayan Moya", "Yoselin Alvarado"],
       "contactos": {
@@ -175,7 +175,7 @@
       "dia": "Jueves",
       "zona": "San Ramón",
       "lugar": "Residencial Las Lomas",
-      "referencia": "",
+      "referencia": "En la última entrada de las lomas, 200 metros a la derecha del parque",
       "hora": "6:30 pm",
       "lideres": ["Génesis Orozco", "Dylan Jiménez"],
       "contactos": {
@@ -212,8 +212,8 @@
       "id": "jueves-centro-biblioteca",
       "dia": "Jueves",
       "zona": "San Ramón",
-      "lugar": "Centro, SR",
-      "referencia": "A la par del lavacar, diagonal a la biblioteca pública",
+      "lugar": "San Ramón Centro",
+      "referencia": "Al lado del lavacar y lubricentro, diagonal a la biblioteca pública",
       "hora": "7:00 pm",
       "lideres": ["Esteban Leitón", "Betsy Peña"],
       "contactos": {
@@ -232,7 +232,7 @@
       "dia": "Jueves",
       "zona": "San Ramón",
       "lugar": "San Rafael",
-      "referencia": "",
+      "referencia": "100 metros al norte de la iglesia de San Rafael, casa a mano derecha color celeste",
       "hora": "7:00 pm",
       "lideres": ["Samuel González"],
       "contactoUnico": {
@@ -264,7 +264,7 @@
       "dia": "Jueves",
       "zona": "Naranjo",
       "lugar": "Naranjo Centro",
-      "referencia": "",
+      "referencia": "Bajo los morados",
       "hora": "7:30 pm",
       "lideres": ["Fátima Rojas", "Jeison Sánchez"],
       "contactos": {
@@ -347,7 +347,7 @@
       "dia": "Viernes",
       "zona": "Palmares",
       "lugar": "Buenos Aires",
-      "referencia": "",
+      "referencia": "Tres Marías, de la escuela SEP 200 metros norte y 25 metros oeste en calle real",
       "hora": "7:00 pm",
       "lideres": ["Brayan Moya", "Yoselin Alvarado"],
       "contactos": {
