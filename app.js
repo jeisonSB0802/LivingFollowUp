@@ -8,6 +8,7 @@ const filterLabel = document.querySelector("#filter-label");
 const resetFiltersButton = document.querySelector("#reset-filters");
 const emptyResetButton = document.querySelector("#empty-reset");
 const generalContact = document.querySelector("#general-contact");
+const filterStartAnchor = document.querySelector("#filter-start-anchor");
 const redirectDialog = document.querySelector("#redirect-dialog");
 const redirectClose = document.querySelector("#redirect-close");
 const redirectContinue = document.querySelector("#redirect-continue");
@@ -168,6 +169,11 @@ function renderGroups() {
   }
 }
 
+function scrollToFilterStart() {
+  const top = window.scrollY + filterStartAnchor.getBoundingClientRect().top;
+  window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
+}
+
 function configureFilterOptions() {
   const values = filterMode === "day"
     ? [...new Set(groups.map((group) => group.dia))]
@@ -204,6 +210,7 @@ function setFilterMode(mode) {
   });
   configureFilterOptions();
   renderGroups();
+  scrollToFilterStart();
 }
 
 function resetFilters() {
@@ -370,7 +377,10 @@ document.querySelectorAll(".filter-tab").forEach((tab) => {
   tab.addEventListener("click", () => setFilterMode(tab.dataset.filterMode));
 });
 
-filterSelect.addEventListener("change", renderGroups);
+filterSelect.addEventListener("change", () => {
+  renderGroups();
+  scrollToFilterStart();
+});
 
 document.addEventListener("click", (event) => {
   const joinButton = event.target.closest(".join-button");
@@ -383,7 +393,10 @@ document.addEventListener("click", (event) => {
   }
 });
 
-groupSearch.addEventListener("input", renderGroups);
+groupSearch.addEventListener("input", () => {
+  renderGroups();
+  scrollToFilterStart();
+});
 resetFiltersButton.addEventListener("click", resetFilters);
 emptyResetButton.addEventListener("click", resetFilters);
 generalContact.addEventListener("click", () => openMarcosNovoWhatsApp());
