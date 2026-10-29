@@ -31,7 +31,7 @@ const groupCardObserver = "IntersectionObserver" in window
   : null;
 
 const dayOrder = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
-const davidHerreraPhone = "50663658363";
+const marcosNovoPhone = "50662332979";
 
 exploreGroupsLink.addEventListener("click", () => {
   groupsSection.classList.remove("is-arriving");
@@ -280,7 +280,7 @@ function loadGroups() {
     .catch(showLoadError);
 }
 
-function openDavidHerreraWhatsApp(group = null) {
+function openMarcosNovoWhatsApp(group = null) {
   const groupLocation = group
     ? group.zona === group.lugar
       ? group.lugar
@@ -289,7 +289,7 @@ function openDavidHerreraWhatsApp(group = null) {
   const leaders = group?.lideres ?? [];
   const leadersLabel = leaders.length === 1 ? "Líder" : "Líderes";
   const message = group
-    ? `Hola, David 👋
+    ? `Hola, Marcos 👋
 
 Vi la página de la Red Living y me interesa integrarme a un grupo de amistad.
 
@@ -299,12 +299,12 @@ Vi la página de la Red Living y me interesa integrarme a un grupo de amistad.
 🕒 Hora: ${formatTime(group.hora)}
 
 ¿Me cuentas cómo puedo participar? ¡Gracias!`
-    : `Hola, David 👋
+    : `Hola, Marcos 👋
 
 Quiero ser parte de un grupo de amistad de la Red Living.
 
 ¿Me ayudas a encontrar uno y me cuentas cómo puedo integrarme? ¡Gracias!`;
-  pendingWhatsAppUrl = `https://wa.me/${davidHerreraPhone}?text=${encodeURIComponent(message)}`;
+  pendingWhatsAppUrl = `https://wa.me/${marcosNovoPhone}?text=${encodeURIComponent(message)}`;
   redirectDialog.showModal();
 }
 
@@ -379,13 +379,13 @@ document.addEventListener("click", (event) => {
   }
   const group = groups.find((item) => item.id === joinButton.dataset.groupId);
   if (group) {
-    openDavidHerreraWhatsApp(group);
+    openMarcosNovoWhatsApp(group);
   }
 });
 
 groupSearch.addEventListener("input", renderGroups);
 resetFiltersButton.addEventListener("click", resetFilters);
 emptyResetButton.addEventListener("click", resetFilters);
-generalContact.addEventListener("click", () => openDavidHerreraWhatsApp());
+generalContact.addEventListener("click", () => openMarcosNovoWhatsApp());
 
 loadGroups();
