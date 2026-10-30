@@ -90,7 +90,7 @@ function getGroupCard(group) {
       <dl class="group-details">
         <div><dt>${leadersLabel}</dt><dd>${leaders}</dd></div>
         <div><dt>Hora</dt><dd>${escapeHtml(formatTime(group.hora))}</dd></div>
-        ${group.referencia || group.mapa ? `<div><dt>Referencia</dt><dd>${group.referencia ? `${escapeHtml(group.referencia)}${group.mapa ? "<br>" : ""}` : ""}${group.mapa ? `<a href="${escapeHtml(group.mapa)}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>` : ""}</dd></div>` : ""}
+        ${group.referencia || group.mapa ? `<div><dt>Referencia</dt><dd>${group.referencia ? `<span class="reference-text">${escapeHtml(group.referencia)}</span>` : ""}${group.mapa ? `<a class="directions-link" href="${escapeHtml(group.mapa)}" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Cómo llegar</span></a>` : ""}</dd></div>` : ""}
       </dl>
       <button class="button button-pink join-button" type="button" data-group-id="${escapeHtml(group.id)}">Me interesa unirme <span aria-hidden="true">↗</span></button>
     </article>

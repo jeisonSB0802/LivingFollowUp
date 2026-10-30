@@ -71,12 +71,12 @@
       }
     },
     {
-      "id": "miercoles-san-juan-carolina",
-      "dia": "Miércoles",
+      "id": "jueves-san-juan-carolina",
+      "dia": "Jueves",
       "zona": "San Ramón",
       "lugar": "San Juan",
       "referencia": "600 metros al este de Pizza Lobitos, calle La Caballeriza",
-      "hora": "7:00 pm",
+      "hora": "6:30 pm",
       "lideres": ["Carolina Montero"],
       "contactoUnico": {
         "lider": "Carolina",
@@ -108,6 +108,7 @@
       "zona": "Naranjo",
       "lugar": "San Miguel Oeste",
       "referencia": "Calle la Quesera, cuarta casa a mano derecha, San Miguel, Naranjo",
+      "mapa": "https://www.google.com/maps/place/10%C2%B004'45.4%22N+84%C2%B024'53.6%22W/@10.0792856,-84.4174537,751m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.0792856!4d-84.4148788?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:30 pm",
       "lideres": ["Jennifer Alvarado", "Yendry Rojas", "Steven Carvajal"],
       "contactos": {
@@ -126,8 +127,8 @@
       "dia": "Miércoles",
       "zona": "San Ramón",
       "lugar": "San Rafael",
-      "referencia": "1 kilómetro al norte de la iglesia de San Rafael",
-      "hora": "7:30 pm",
+      "referencia": "200 metros sur del (antiguo) Hogares Crea",
+      "hora": "7:00 pm",
       "lideres": ["Gael Valverde"],
       "contactoUnico": {
         "lider": "Gael Valverde",
@@ -270,7 +271,7 @@
       "dia": "Jueves",
       "zona": "Naranjo",
       "lugar": "Naranjo Centro",
-      "referencia": "Bajo los morados",
+      "referencia": "Bajo Los Morados",
       "mapa": "https://www.google.com/maps/place/10%C2%B006'29.0%22N+84%C2%B023'24.4%22W/@10.1080632,-84.392688,1117m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d10.1080632!4d-84.3901131?hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
       "hora": "7:30 pm",
       "lideres": ["Fátima Rojas", "Jeison Sánchez"],

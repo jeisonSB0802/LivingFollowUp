@@ -552,6 +552,48 @@ select:focus-visible {
   overflow-wrap: anywhere;
 }
 
+.reference-text {
+  display: block;
+}
+
+.directions-link {
+  display: flex;
+  width: fit-content;
+  min-height: 40px;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+  color: var(--pink-dark);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.directions-link svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.directions-link:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .directions-link:hover {
+    color: var(--pink);
+  }
+}
+
 .group-card .button {
   width: 100%;
   margin-top: auto;
